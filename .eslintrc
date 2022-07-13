@@ -13,7 +13,10 @@
     },
     "ecmaVersion": 12,
     "sourceType": "module",
-    "project": "my-little-library-client/tsconfig.json"
+    /* airbnb-typescript 적용을 위해 project를 설정해주는데 작업 경로를 기준으로 한다.
+      파싱 에러시 경로 관련 참고자료: https://bobbyhadz.com/blog/typescript-parsing-error-cannot-read-file 
+    */
+    "project": "./tsconfig.json"
   },
 
   // eslint-plugin-{name}, 패키지에 미리 설정된 기본 규칙을 가져오는 옵션이다.
