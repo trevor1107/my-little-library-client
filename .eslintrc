@@ -1,0 +1,65 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+
+  "parser": "@typescript-eslint/parser",
+
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "my-little-library-client/tsconfig.json"
+  },
+
+  // eslint-plugin-{name}, 패키지에 미리 설정된 기본 규칙을 가져오는 옵션이다.
+  "plugins": [
+    "prettier",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "import",
+    "@typescript-eslint"
+  ],
+
+  // eslint-config 또는 eslint-plugin에 대하여 기본 규칙을 확장하여 설정할 수 있다.
+  "extends": [
+    "airbnb", // eslint-config-{name}, 'eslint-config-' 생략 가능
+    "airbnb-typescript",
+    "prettier",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/strict",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+
+  // extends보다 우선 적용되는 규칙
+  "rules": {
+    "no-shadow": 0,
+    "no-use-before-define": 0,
+    "no-extra-semi": 1,
+    "linebreak-style": 0,
+    "prettier/prettier": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0, // 테스트 또는 개발환경을 구성하는 파일에서는 devDependency 사용을 허용
+    "import/prefer-default-export": 0, // export const 문을 쓸때 에러를 내는 규칙 해제
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ], // 확장자 허용 설정
+    "arrow-parens": ["warn", "as-needed"], // 화살표 함수의 파라미터가 하나일 때 괄호 생략
+    "react/jsx-props-no-spreading": [1, { "custom": "ignore" }], // props spreading을 허용하지 않는 규칙 해제
+    "no-param-reassign": ["error", { "props": false }]
+  }
+}
